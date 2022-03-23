@@ -7,5 +7,4 @@ public class Card {
     public int getCardValue() {
         return cardValue;
     }
-
 }
