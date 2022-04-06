@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class User implements Player {
     int cardTotal;
+    Money money = new Money();
     List<Card> cardList = new ArrayList<Card>();
 
     @Override
