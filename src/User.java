@@ -26,29 +26,27 @@ public class User implements Player {
 
     @Override
     public int cardsTotal() {
+        int total = 0;
         for (Card card : cardList) {
-            cardTotal += card.getCardValue();
+            total += card.getCardValue();
         }
+        cardTotal = total;
         return cardTotal;
     }
 
     @Override
     public boolean stay() {
 
-        String stay = null;
-
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Do you want to stay?\n" + "Enter \"Y\" to stay or \"N\" to continue");
+        String userStay = "";
 
-        String userStay = scanner.nextLine().toUpperCase(Locale.ROOT);
-
-        while (stay != "Y" || stay != "N") {
-            if (stay == "Y") {
+        while (!userStay.equals("N") || !userStay.equals("Y")) {
+            System.out.println("Do you want to stay?\n" + "Enter \"Y\" to stay or \"N\" to continue");
+            userStay = scanner.nextLine().toUpperCase(Locale.ROOT);
+            if (userStay.equals("Y")) {
                 return true;
-            } else if (stay != "Y" || stay != "N") {
-                System.out.println("Please choose from menu option");
-                String userNewStay = scanner.nextLine().toUpperCase(Locale.ROOT);
-            } else {
+            }
+            else if (userStay.equals("N")) {
                 return false;
             }
         }

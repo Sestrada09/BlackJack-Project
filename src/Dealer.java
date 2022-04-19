@@ -24,9 +24,11 @@ public class Dealer implements Player {
 
     @Override
     public int cardsTotal() {
+        int total = 0;
         for (Card card : cardList) {
-            cardTotal += card.getCardValue();
+            total += card.getCardValue();
         }
+        cardTotal = total;
         return cardTotal;
     }
 
