@@ -10,8 +10,17 @@ public class User implements Player {
 
     @Override
     public int drawCard() {
-        Card newCard = new Card();
-        cardList.add(newCard);
+        Card newCard;
+        if (cardList.size() == 1 && cardList.get(0).getCardValue() == 11) {
+            do {
+                newCard = new Card();
+            } while (newCard.getCardValue() == 11);
+            cardList.add(newCard);
+        }
+        else {
+            newCard = new Card();
+            cardList.add(newCard);
+        }
         return newCard.getCardValue();
     }
 
@@ -44,5 +53,11 @@ public class User implements Player {
             }
         }
         return false;
+    }
+
+    @Override
+    public void resetCardList() {
+        cardList = new ArrayList<>();
+        cardTotal = 0;
     }
 }
