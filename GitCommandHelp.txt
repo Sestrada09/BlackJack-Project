@@ -1,0 +1,5 @@
+git status - status of your branch (what files are ready to be committed, staged, and pushed)
+git add (will stage files so that they are ready to be committed)
+git commit (will package all files in order to be pushed to central repo)
+git push (will push commits to central repo)
+git pull (pull changes from central repo)
